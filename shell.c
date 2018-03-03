@@ -205,3 +205,13 @@ void sig_child(int sig){
   } 
 
 }
+
+
+/*
+・コマンドラインでの引数受け取り
+・「exit」「quit」で終了
+・back ground実行
+・内部コマンド「jobs」「fg」対応
+・シグナル(^C)対応
+・PATHに基づいたコマンド検索
+ */
