@@ -1,23 +1,28 @@
 #include<iostream>
+#include <cassert>
 
 struct stack{
-    int max_size, top;
+    int max_size, highest;
     int *s;
-    stack(int n): max_size(n), top(0){
+    stack(int n): max_size(n), highest(0){
         s = new int[max_size];
     }
     void push(int x){
-        s[top] = x;
-        top++;
+        s[highest] = x;
+        highest++;
     }
     void pop(){
-        top--;
+        highest--;
+    }
+    int top(){
+        assert(size());
+        return s[highest];
     }
     int size(){
-        return top;
+        return highest;
     }
     void print(){
-        for(int i = 0; i < top; i++)std::cout << " " << s[i];
+        for(int i = 0; i < highest; i++)std::cout << " " << s[i];
         std::cout << std::endl;
     }
 };
